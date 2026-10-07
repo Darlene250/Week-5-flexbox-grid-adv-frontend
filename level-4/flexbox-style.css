@@ -1,0 +1,731 @@
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+:root {
+    --header-height: 70px;
+    --left-width: 220px;
+    --right-width: 260px;
+
+    --gap: clamp(12px, 2vw, 24px);
+    --padding: clamp(12px, 2vw, 30px);
+
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 var(--padding);
+
+    background: #1f2937;
+    color: white;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: bold;
+}
+
+.user-menu {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #4b5563;
+    font-weight: bold;
+}
+
+.user-menu button {
+    border: none;
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+
+    padding: 8px;
+}
+
+
+/* User dropdown */
+
+.user-dropdown {
+    display: none;
+
+    position: absolute;
+    right: 0;
+    top: 48px;
+
+    width: 150px;
+
+    background: white;
+    border-radius: var(--radius);
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+}
+
+.user-dropdown.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-dropdown a {
+    padding: 12px;
+    text-decoration: none;
+    color: #222;
+}
+
+.user-dropdown a:hover {
+    background: #f1f1f1;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+    margin-top: var(--header-height);
+
+    min-height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(15px, 3vw, 35px);
+
+    padding: 10px var(--padding);
+
+    background: white;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.navigation a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    color: #2563eb;
+}
+
+
+/* =========================
+   HOLY GRAIL LAYOUT
+========================= */
+
+.layout {
+    display: flex;
+
+    align-items: stretch;
+
+    gap: var(--gap);
+
+    padding: var(--padding);
+
+    min-height: 600px;
+}
+
+
+/* Left Sidebar */
+
+.left-sidebar {
+    flex: 0 1 var(--left-width);
+
+    min-width: 0;
+    max-width: var(--left-width);
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: var(--radius);
+
+    transition: 0.3s;
+}
+
+.sidebar-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.sidebar-title button,
+.sidebar-heading button {
+    border: none;
+
+    background: #e5e7eb;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.sidebar-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.sidebar-links a {
+    text-decoration: none;
+
+    color: #333;
+
+    padding: 10px;
+
+    border-radius: 8px;
+}
+
+.sidebar-links a:hover {
+    background: #e5e7eb;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main {
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--gap);
+}
+
+.main-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: white;
+
+    padding: var(--padding);
+
+    border-radius: var(--radius);
+}
+
+.main-header > div {
+    flex-grow: 1;
+}
+
+.small-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.main-header h1 {
+    font-size: clamp(26px, 4vw, 40px);
+
+    margin: 5px 0;
+}
+
+.new-task {
+    flex-shrink: 0;
+
+    align-self: flex-start;
+
+    margin-left: auto;
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.new-task:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   TASKS
+========================= */
+
+.tasks {
+    background: white;
+
+    padding: var(--padding);
+
+    border-radius: var(--radius);
+}
+
+.tasks-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.tasks-header select {
+    padding: 8px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+}
+
+
+/* Flexbox cards */
+
+.task-cards {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: stretch;
+
+    gap: var(--gap);
+}
+
+.task-card {
+    flex: 1 1 260px;
+
+    min-width: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 20px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: var(--radius);
+
+    position: relative;
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+}
+
+.task-category {
+    display: inline-block;
+
+    align-self: flex-start;
+
+    padding: 5px 9px;
+
+    margin-bottom: 10px;
+
+    border-radius: 20px;
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.task-card h3 {
+    margin: 5px 0 10px;
+}
+
+.task-card p {
+    line-height: 1.5;
+}
+
+.task-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: auto;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #ddd;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RIGHT SIDEBAR
+========================= */
+
+.right-sidebar {
+    flex: 0 1 var(--right-width);
+
+    min-width: 0;
+    max-width: var(--right-width);
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    transition: 0.3s;
+}
+
+.sidebar-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.notification {
+    padding: 15px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.notification p {
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.progress {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #ddd;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: var(--gap);
+
+    padding: 30px var(--padding);
+
+    background: #1f2937;
+
+    color: white;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.footer a {
+    color: #d1d5db;
+
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+
+/* =========================
+   SIDEBAR COLLAPSE
+========================= */
+
+.left-sidebar.collapsed {
+    flex-basis: 70px;
+
+    max-width: 70px;
+
+    padding: 12px;
+}
+
+.left-sidebar.collapsed h2 {
+    display: none;
+}
+
+.left-sidebar.collapsed .sidebar-title {
+    justify-content: center;
+}
+
+.left-sidebar.collapsed .sidebar-links a {
+    font-size: 0;
+    text-align: center;
+}
+
+.left-sidebar.collapsed .sidebar-links a::before {
+    content: "•";
+
+    font-size: 20px;
+}
+
+
+/* Right sidebar collapse */
+
+.right-sidebar.collapsed {
+    flex-basis: 70px;
+
+    max-width: 70px;
+
+    padding: 12px;
+}
+
+.right-sidebar.collapsed h2,
+.right-sidebar.collapsed .notification,
+.right-sidebar.collapsed .progress {
+    display: none;
+}
+
+.right-sidebar.collapsed .sidebar-heading {
+    justify-content: center;
+}
+
+
+/* =========================
+   BREAKPOINT 1
+   Large desktop
+========================= */
+
+@media (max-width: 1399px) {
+
+    :root {
+        --left-width: 200px;
+        --right-width: 230px;
+    }
+
+    .task-card {
+        flex-basis: 240px;
+    }
+}
+
+
+/* =========================
+   BREAKPOINT 2
+   Tablet landscape
+========================= */
+
+@media (max-width: 1099px) {
+
+    .layout {
+        flex-wrap: wrap;
+    }
+
+    .left-sidebar {
+        flex: 0 1 200px;
+    }
+
+    .main {
+        flex: 1 1 500px;
+    }
+
+    .right-sidebar {
+        flex: 1 1 100%;
+
+        max-width: none;
+    }
+
+    .right-sidebar .notification {
+        display: inline-block;
+
+        width: 31%;
+
+        margin-right: 1%;
+    }
+
+    .progress {
+        display: inline-block;
+
+        width: 100%;
+    }
+}
+
+
+/* =========================
+   BREAKPOINT 3
+   Tablet / Mobile
+========================= */
+
+@media (max-width: 767px) {
+
+    .navigation {
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .left-sidebar,
+    .main,
+    .right-sidebar {
+        flex: 1 1 100%;
+
+        max-width: none;
+    }
+
+    .left-sidebar {
+        order: 2;
+    }
+
+    .main {
+        order: 1;
+    }
+
+    .right-sidebar {
+        order: 3;
+    }
+
+    .main-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .new-task {
+        margin-left: 0;
+    }
+
+    .task-card {
+        flex-basis: 100%;
+    }
+
+    .right-sidebar .notification {
+        width: 100%;
+
+        margin-right: 0;
+    }
+}
+
+
+/* =========================
+   BREAKPOINT 4
+   Small mobile
+========================= */
+
+@media (max-width: 480px) {
+
+    .header {
+        padding: 0 12px;
+    }
+
+    .user-avatar {
+        display: none;
+    }
+
+    .navigation {
+        gap: 15px;
+    }
+
+    .main-header h1 {
+        font-size: 28px;
+    }
+
+    .tasks-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .tasks-header select {
+        width: 100%;
+    }
+
+    .task-card {
+        min-width: 0;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+}
