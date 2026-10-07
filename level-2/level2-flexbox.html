@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Level 2 multi-column layout built with Flexbox">
+    <title>Level 2 - Flexbox Layout</title>
+    <link rel="stylesheet" href="flexbox-style.css">
+</head>
+<body class="flexbox-layout">
+    <header class="site-header">
+        <p class="eyebrow">Level 2 activity</p>
+        <h1>Flexible Foundations</h1>
+        <p>Exploring the relationship between structure and flow.</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#principles">Principles</a>
+        <a href="#practice">Practice</a>
+    </nav>
+
+    <main class="content-layout">
+        <section class="main-content" id="overview">
+            <p class="eyebrow">Main content</p>
+            <h2>Build with flow in mind</h2>
+            <p>Flexbox is designed for arranging content along a single axis. In this page, a nested flex container creates the two-column content region while the page wrapper manages the vertical sequence.</p>
+            <div class="principles" id="principles">
+                <article class="principle-card">
+                    <h3>Flexible sizing</h3>
+                    <p>The main column grows into available space while the sidebar keeps a predictable share of the row.</p>
+                </article>
+                <article class="principle-card" id="practice">
+                    <h3>Responsive flow</h3>
+                    <p>At a narrow viewport, both columns wrap into a natural vertical reading order.</p>
+                </article>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <p class="eyebrow">Sidebar</p>
+            <h2>Layout notes</h2>
+            <ul>
+                <li>70% main content</li>
+                <li>30% supporting content</li>
+                <li>One-column mobile flow</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Flexbox vs Grid Activity</p>
+    </footer>
+</body>
+</html>
