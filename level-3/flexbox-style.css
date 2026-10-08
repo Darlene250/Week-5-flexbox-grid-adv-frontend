@@ -1,0 +1,59 @@
+/* Level 3 - Flexbox layout */
+
+/* mobile: everything in one column */
+.flexbox-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* show the article before the sidebars */
+.main-content {
+    flex-grow: 1;
+    order: -1;
+}
+
+/* tablet: article on top, sidebars side by side below */
+@media (min-width: 701px) {
+    /* same background as the article so the extra space doesn't show */
+    .page-body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-between;
+        background: var(--surface);
+    }
+
+    .main-content {
+        flex-basis: 100%;
+    }
+
+    .sidebar {
+        flex: 1 1 40%;
+    }
+}
+
+/* desktop: 20% | 60% | 20% */
+@media (min-width: 1025px) {
+    .page-body {
+        flex-wrap: nowrap;
+    }
+
+    .sidebar,
+    .main-content {
+        min-width: 0;
+    }
+
+    .sidebar {
+        flex: 0 0 20%;
+    }
+
+    .main-content {
+        flex: 0 0 60%;
+        order: 0;
+    }
+}
