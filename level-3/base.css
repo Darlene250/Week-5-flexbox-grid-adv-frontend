@@ -1,0 +1,84 @@
+/* Shared styles for both Level 3 pages (colours and spacing) */
+
+:root {
+    --dark: #222;
+    --light: #fff;
+    --surface: #fff;
+    --left-bg: #eee;
+    --right-bg: #ddd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.site-header,
+.site-footer {
+    padding: 1.5rem;
+    background: var(--dark);
+    color: var(--light);
+}
+
+/* nav links in a row */
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: #444;
+}
+
+.site-nav a {
+    color: var(--light);
+}
+
+.sidebar,
+.main-content {
+    padding: 1.5rem;
+}
+
+.main-content {
+    background: var(--surface);
+}
+
+.sidebar-left {
+    background: var(--left-bg);
+}
+
+.sidebar-right {
+    background: var(--right-bg);
+}
+
+h2 {
+    margin-bottom: 0.75rem;
+}
+
+h3 {
+    margin-top: 1.5rem;
+}
+
+p,
+ul,
+ol,
+blockquote {
+    margin-bottom: 1rem;
+}
+
+ul,
+ol {
+    padding-left: 1.25rem;
+}
+
+blockquote {
+    padding-left: 1rem;
+    border-left: 4px solid var(--dark);
+    font-style: italic;
+}

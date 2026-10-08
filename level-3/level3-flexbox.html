@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Level 3 three-column blog layout built with Flexbox">
+    <title>Level 3 - Flexbox Layout</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="flexbox-style.css">
+</head>
+<body class="flexbox-layout">
+    <header class="site-header">
+        <p>Level 3 activity</p>
+        <h1>The Daily Layout</h1>
+        <p>Stories about building a faster, friendlier web.</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#post">Latest</a>
+        <a href="#categories">Categories</a>
+        <a href="#trending">Trending</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <!-- wrapper for the 3 columns -->
+    <div class="page-body">
+        <aside class="sidebar sidebar-left" aria-label="Blog sections">
+            <section id="categories">
+                <h2>Categories</h2>
+                <ul>
+                    <li><a href="#">Web design</a></li>
+                    <li><a href="#">Front-end</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Performance</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </section>
+
+            <section id="about">
+                <h2>About</h2>
+                <p>The Daily Layout is a student blog about CSS, design and the craft of building for every screen.</p>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <article id="post">
+                <p>Web design &middot; 5 min read</p>
+                <h2>Mobile first is not a trend, it is the starting point</h2>
+                <p>By the Editorial Team &middot; <time datetime="2026-10-08">8 October 2026</time></p>
+
+                <p>For many readers, the phone is not the second screen. It is the only screen. Designing for it first changes every decision that follows.</p>
+
+                <h3>Start small, then add room</h3>
+                <p>A mobile-first stylesheet begins with a single column: content in a clear reading order with nothing competing for space. Larger screens are treated as an enhancement. Media queries add columns only when there is room for them, instead of squeezing a desktop design down until it breaks.</p>
+
+                <blockquote>
+                    <p>&ldquo;The best layout is the one the reader never has to think about.&rdquo;</p>
+                </blockquote>
+
+                <h3>Let the content decide the breakpoints</h3>
+                <p>Device sizes change every year, but content has needs that stay the same. A sidebar becomes useful once the main column can keep a comfortable line length beside it. Breakpoints set at that point age much better than breakpoints copied from a list of popular phones.</p>
+
+                <h3>Choose the right tool</h3>
+                <p>Flexbox shines when items flow along one direction, like a row of navigation links. Grid shines when rows and columns must line up together, like a full page. This page is built both ways so you can compare them side by side.</p>
+            </article>
+        </main>
+
+        <aside class="sidebar sidebar-right" aria-label="Trending stories">
+            <section id="trending">
+                <h2>Trending</h2>
+                <ol>
+                    <li><a href="#">Five CSS properties you are probably underusing</a></li>
+                    <li><a href="#">Why your images are slowing down your site</a></li>
+                    <li><a href="#">A beginner's guide to accessible forms</a></li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Tags</h2>
+                <ul>
+                    <li>CSS</li>
+                    <li>Flexbox</li>
+                    <li>Grid</li>
+                    <li>Responsive</li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 The Daily Layout &middot; Flexbox vs Grid Activity</p>
+    </footer>
+</body>
+</html>
