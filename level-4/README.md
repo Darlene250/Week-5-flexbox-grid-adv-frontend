@@ -11,8 +11,14 @@ The project also includes responsive layouts and simple JavaScript interactions.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## SWITCHING BETWEEN FLEXBOX AND GRID 
-i used the same index.html file for both versions.
+i used the same `index.html` file for both versions.
 
-for Flexbox in index.html file check the link to the style and use this <link rel="stylesheet" href="flexbox-style.css">
+for Flexbox in index.html file check the link to the style and use this:
+```
+<link rel="stylesheet" href="flexbox-style.css">
+```
 
-then for grid use this <link rel="stylesheet" href="grid-style.css">
+then for grid use this:
+```
+<link rel="stylesheet" href="grid-style.css">`
+```
