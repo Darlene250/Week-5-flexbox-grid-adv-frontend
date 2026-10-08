@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow Dashboard</title>
+
+    <!-- Change this to grid-style.css to test Grid -->
+    <link rel="stylesheet" href="flexbox-style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            TaskFlow
+        </div>
+
+        <div class="user-menu">
+
+            <span class="user-avatar">KM</span>
+
+            <button id="userButton" aria-label="Open user menu">
+                Kevin ▼
+            </button>
+
+            <div class="user-dropdown" id="userDropdown">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Navigation -->
+    <nav class="navigation">
+
+        <a href="#">Dashboard</a>
+        <a href="#">Tasks</a>
+        <a href="#">Projects</a>
+        <a href="#">Calendar</a>
+        <a href="#">Reports</a>
+
+    </nav>
+
+
+    <!-- Holy Grail Layout -->
+    <div class="layout" id="pageLayout">
+
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar" id="leftSidebar">
+
+            <div class="sidebar-title">
+
+                <h2>Menu</h2>
+
+                <button id="sidebarButton"
+                    aria-label="Collapse sidebar">
+                    ←
+                </button>
+
+            </div>
+
+            <nav class="sidebar-links">
+                <a href="#">Dashboard</a>
+                <a href="#">My Tasks</a>
+                <a href="#">Projects</a>
+                <a href="#">Calendar</a>
+                <a href="#">Reports</a>
+            </nav>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <div class="main-header">
+
+                <div>
+                    <p class="small-title">MY WORKSPACE</p>
+
+                    <h1>My Tasks</h1>
+
+                    <p>
+                        Manage your tasks and track your progress.
+                    </p>
+                </div>
+
+                <button class="new-task">
+                    + New Task
+                </button>
+
+            </div>
+
+
+            <!-- Task Section -->
+            <section class="tasks">
+
+                <div class="tasks-header">
+
+                    <h2>Current Tasks</h2>
+
+                    <select>
+                        <option>All Tasks</option>
+                        <option>In Progress</option>
+                        <option>Completed</option>
+                    </select>
+
+                </div>
+
+
+                <!-- Task Cards -->
+                <div class="task-cards">
+
+                    <article class="task-card featured-card">
+
+                        <span class="task-category">
+                            Development
+                        </span>
+
+                        <h3>Build Dashboard</h3>
+
+                        <p>
+                            Create the responsive dashboard layout.
+                        </p>
+
+                        <div class="task-footer">
+                            <span>In Progress</span>
+                            <span>Oct 9</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="task-card">
+
+                        <span class="task-category">
+                            Design
+                        </span>
+
+                        <h3>Review Design</h3>
+
+                        <p>
+                            Review the dashboard design and improve it.
+                        </p>
+
+                        <div class="task-footer">
+                            <span>Pending</span>
+                            <span>Oct 11</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="task-card">
+
+                        <span class="task-category">
+                            Testing
+                        </span>
+
+                        <h3>Test Mobile Layout</h3>
+
+                        <p>
+                            Test the website on different screen sizes.
+                        </p>
+
+                        <div class="task-footer">
+                            <span>Completed</span>
+                            <span>Oct 7</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="task-card">
+
+                        <span class="task-category">
+                            Documentation
+                        </span>
+
+                        <h3>Write Documentation</h3>
+
+                        <p>
+                            Explain the project and layout decisions.
+                        </p>
+
+                        <div class="task-footer">
+                            <span>In Progress</span>
+                            <span>Oct 12</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="task-card">
+
+                        <span class="task-category">
+                            Research
+                        </span>
+
+                        <h3>Compare Flexbox and Grid</h3>
+
+                        <p>
+                            Compare both CSS layout systems.
+                        </p>
+
+                        <div class="task-footer">
+                            <span>Pending</span>
+                            <span>Oct 14</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="task-card">
+
+                        <span class="task-category">
+                            Deployment
+                        </span>
+
+                        <h3>Prepare Submission</h3>
+
+                        <p>
+                            Check the project before submitting it.
+                        </p>
+
+                        <div class="task-footer">
+                            <span>In Progress</span>
+                            <span>Oct 15</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar" id="rightSidebar">
+
+            <div class="sidebar-heading">
+
+                <h2>Notifications</h2>
+
+                <button id="rightSidebarButton"
+                    aria-label="Collapse notifications">
+                    →
+                </button>
+
+            </div>
+
+
+            <div class="notification">
+
+                <strong>New Task</strong>
+
+                <p>
+                    A new task was assigned to you.
+                </p>
+
+            </div>
+
+
+            <div class="notification">
+
+                <strong>Project Updated</strong>
+
+                <p>
+                    Your project was updated.
+                </p>
+
+            </div>
+
+
+            <div class="notification">
+
+                <strong>Deadline</strong>
+
+                <p>
+                    Your documentation is due soon.
+                </p>
+
+            </div>
+
+
+            <section class="progress">
+
+                <h2>Today's Progress</h2>
+
+                <p>Dashboard: 72%</p>
+                <p>Testing: 45%</p>
+                <p>Documentation: 30%</p>
+
+            </section>
+
+        </aside>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-column">
+
+            <h2>TaskFlow</h2>
+
+            <p>
+                Manage your tasks easily.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h2>Resources</h2>
+
+            <a href="#">Documentation</a>
+            <a href="#">Help Center</a>
+            <a href="#">Guides</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h2>Company</h2>
+
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
